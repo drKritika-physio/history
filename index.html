@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physiotherapy History Taking Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h2 {
+            margin-bottom: 30px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .form-check {
+            margin-bottom: 10px; /* Add spacing between checkboxes */
+        }
+        .form-check-label {
+            margin-left: 10px; /* Space after checkbox */
+        }
+        .btn-submit {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center">Physiotherapy History Taking Form</h2>
+    <p class="text-center">Please fill out this form to help us understand your condition and provide the best care.</p>
+
+    <form>
+        <div class="form-section">
+            <h4>PERSONAL DETAILS</h4>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Gender:</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="Male">
+                            <label class="form-check-label">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="Female">
+                            <label class="form-check-label">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" value="Other">
+                            <label class="form-check-label">Other</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <input type="text" class="form-control" id="occupation" required>
+            </div>
+            <div class="form-group">
+                <label for="emergency-contact">Emergency Contact Name & Phone:</label>
+                <input type="text" class="form-control" id="emergency-contact" required>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h4>CHIEF COMPLAINT</h4>
+            <div class="form-group">
+                <label for="concern">What is your primary concern or reason for seeking physiotherapy?</label>
+                <textarea class="form-control" id="concern" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>How long have you had this issue?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="duration-days" class="form-check-input">
+                    <label class="form-check-label" for="duration-days">Days</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="duration-weeks" class="form-check-input">
+                    <label class="form-check-label" for="duration-weeks">Weeks</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="duration-months" class="form-check-input">
+                    <label class="form-check-label" for="duration-months">Months</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="duration-years" class="form-check-input">
+                    <label class="form-check-label" for="duration-years">Years</label>
+                </div>
+            </div>            
+            <div class="form-group">
+                <label>Was there any specific incident or injury that caused it?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="incident-yes" class="form-check-input">
+                    <label class="form-check-label" for="incident-yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="incident-no" class="form-check-input">
+                    <label class="form-check-label" for="incident-no">No</label>
+                </div><br>
+                <label>If yes, please explain:</label>
+                <textarea class="form-control" id="incident-details" rows="2" placeholder="Explain the incident..."></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h4>PAIN ASSESSMENT</h4>
+            <div class="form-group">
+                <label for="pain-rating">Rate your pain on a scale of 0 to 10 (0 = no pain, 10 = worst pain):</label>
+                <input type="number" class="form-control" id="pain-rating" min="0" max="10" required>
+            </div>
+            <div class="form-group">
+                <label>Pain Type:</label><br>
+                <div class="form-check">
+                    <input type="checkbox" id="pain-sharp" class="form-check-input">
+                    <label class="form-check-label" for="pain-sharp">Sharp</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="pain-dull" class="form-check-input">
+                    <label class="form-check-label" for="pain-dull">Dull</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="pain-aching" class="form-check-input">
+                    <label class="form-check-label" for="pain-aching">Aching</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="pain-burning" class="form-check-input">
+                    <label class="form-check-label" for="pain-burning">Burning</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="pain-tingling" class="form-check-input">
+                    <label class="form-check-label" for="pain-tingling">Tingling</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="pain-other" class="form-check-input">
+                    <label class="form-check-label" for="pain-other">
+                        Other:
+                    </label>
+                    <input type="text" id="pain-other-text" class="form-control d-inline" style="width: auto;" placeholder="Specify">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>When does the pain occur?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="pain-morning" class="form-check-input">
+                    <label class="form-check-label" for="pain-morning">Morning</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="pain-during-activity" class="form-check-input">
+                    <label class="form-check-label" for="pain-during-activity">During activity</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="pain-after-activity" class="form-check-input">
+                    <label class="form-check-label" for="pain-after-activity">After activity</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="pain-night" class="form-check-input">
+                    <label class="form-check-label" for="pain-night">Night</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="pain-constant" class="form-check-input">
+                    <label class="form-check-label" for="pain-constant">Constant</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Does the pain radiate to other areas?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="pain-radiates-yes" class="form-check-input">
+                    <label class="form-check-label" for="pain-radiates-yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="pain-radiates-no" class="form-check-input">
+                    <label class="form-check-label" for="pain-radiates-no">No</label>
+                </div><br>
+                <label>If yes, where?</label>
+                <input type="text" id="pain-radiates-location" class="form-control" placeholder="Specify area">
+            </div>
+            
+        </div>
+
+        <div class="form-section">
+            <h4>MEDICAL HISTORY</h4>
+            <div class="form-group">
+                <label>Have you had any previous treatment for this condition?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="treatment-yes" class="form-check-input">
+                    <label class="form-check-label" for="treatment-yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="treatment-no" class="form-check-input">
+                    <label class="form-check-label" for="treatment-no">No</label>
+                </div><br>
+                <label for="treatment-details">If yes, what treatment?</label>
+                <input type="text" id="treatment-details" class="form-control" placeholder="Specify treatment">
+            </div>
+            
+            <div class="form-group">
+                <label>Do you have any of the following conditions (check all that apply):</label><br>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-hbp" class="form-check-input">
+                    <label for="condition-hbp" class="form-check-label">High Blood Pressure</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-diabetes" class="form-check-input">
+                    <label for="condition-diabetes" class="form-check-label">Diabetes</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-asthma" class="form-check-input">
+                    <label for="condition-asthma" class="form-check-label">Asthma</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-heart" class="form-check-input">
+                    <label for="condition-heart" class="form-check-label">Heart Disease</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-arthritis" class="form-check-input">
+                    <label for="condition-arthritis" class="form-check-label">Arthritis</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-osteoporosis" class="form-check-input">
+                    <label for="condition-osteoporosis" class="form-check-label">Osteoporosis</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-neuro" class="form-check-input">
+                    <label for="condition-neuro" class="form-check-label">Neurological Disorders</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-surgeries" class="form-check-input">
+                    <label for="condition-surgeries" class="form-check-label">Recent Surgeries</label>
+                    <input type="text" id="condition-surgeries-details" class="form-control d-inline" style="width: auto;" placeholder="Details">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="condition-other" class="form-check-input">
+                    <label for="condition-other" class="form-check-label">Other</label>
+                    <input type="text" id="condition-other-details" class="form-control d-inline" style="width: auto;" placeholder="Details">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Are you currently taking any medications?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="medications-yes" class="form-check-input">
+                    <label for="medications-yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="medications-no" class="form-check-input">
+                    <label for="medications-no" class="form-check-label">No</label>
+                </div><br>
+                <label>If yes, list them:</label>
+                <input type="text" id="medications-list" class="form-control" placeholder="Enter medications here">
+            </div>
+            
+            <div class="form-group">
+                <label>Any allergies (medication, food, etc.)?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="allergies-yes" class="form-check-input">
+                    <label for="allergies-yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="allergies-no" class="form-check-input">
+                    <label for="allergies-no" class="form-check-label">No</label>
+                </div><br>
+                <label>If yes, specify:</label>
+                <input type="text" id="allergies-list" class="form-control" placeholder="Enter allergy details">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h4>LIFESTYLE AND FUNCTIONAL ASSESSMENT</h4>
+            <div class="form-group">
+                <label>Physical activity level:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="activity-sedentary" class="form-check-input">
+                    <label for="activity-sedentary" class="form-check-label">Sedentary</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="activity-light" class="form-check-input">
+                    <label for="activity-light" class="form-check-label">Light</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="activity-moderate" class="form-check-input">
+                    <label for="activity-moderate" class="form-check-label">Moderate</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="activity-intense" class="form-check-input">
+                    <label for="activity-intense" class="form-check-label">Intense</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Do you exercise regularly?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="exercise-yes" class="form-check-input">
+                    <label for="exercise-yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="exercise-no" class="form-check-input">
+                    <label for="exercise-no" class="form-check-label">No</label>
+                </div><br>
+                <label>If yes, what type and frequency?</label>
+                <input type="text" id="exercise-details" class="form-control" placeholder="Enter type and frequency">
+            </div>
+            
+            <div class="form-group">
+                <label>Do you smoke?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="smoke-yes" class="form-check-input">
+                    <label for="smoke-yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="smoke-no" class="form-check-input">
+                    <label for="smoke-no" class="form-check-label">No</label>
+                </div><br>
+                <label>If yes, how many per day?</label>
+                <input type="number" id="smoke-per-day" class="form-control" placeholder="Enter number of cigarettes">
+            </div>
+
+            <div class="form-group">
+                <label>Do you consume alcohol?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="alcohol-yes" class="form-check-input">
+                    <label for="alcohol-yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="alcohol-no" class="form-check-input">
+                    <label for="alcohol-no" class="form-check-label">No</label>
+                </div><br>
+                <label>If yes, how often?</label>
+                <input type="text" id="alcohol-frequency" class="form-control" placeholder="Enter frequency (e.g., daily, weekly)">
+            </div>
+            
+            <div class="form-group">
+                <label>Has this condition affected your daily activities or work?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="condition-yes" class="form-check-input">
+                    <label for="condition-yes" class="form-check-label">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" id="condition-no" class="form-check-input">
+                    <label for="condition-no" class="form-check-label">No</label>
+                </div><br>
+                <label>If yes, please explain:</label>
+                <textarea id="condition-details" class="form-control" rows="2" placeholder="Enter explanation"></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h4>PHYSICAL ASSESSMENT (To be filled by Physiotherapist)</h4>
+            <div class="form-group">
+                <label for="posture">Posture Observations:</label>
+                <textarea class="form-control" id="posture" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rom">Range of Motion:</label>
+                <textarea class="form-control" id="rom" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="strength">Strength Testing:</label>
+                <textarea class="form-control" id="strength" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="gait">Gait Assessment:</label>
+                <textarea class="form-control" id="gait" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="special-tests">Special Tests:</label>
+                <textarea class="form-control" id="special-tests" rows="2"></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h4>GOALS AND EXPECTATIONS</h4>
+            <div class="form-group">
+                <label for="goals">What are your goals for physiotherapy?</label>
+                <textarea class="form-control" id="goals" rows="3"></textarea>
+            </div>
+            <div class="form-group last">
+                <label for="additional-info">Any additional information or concerns:</label>
+                <textarea class="form-control" id="additional-info" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <label>Patient Signature:</label>
+            <input type="text" id="patient-signature" class="form-control" placeholder="_______________________">
+        </div>
+        <div class="form-group mt-3">
+            <label>Date:</label>
+            <input type="date" id="signature-date" class="form-control">
+        </div>
+        <div class="form-group mt-3">
+            <label>Physiotherapist Name/Signature:</label>
+            <input type="text" id="physio-signature" class="form-control" placeholder="____________________________">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+    </form>
+
+    <div id="form-results" style="margin-top: 20px;"></div>
+    <div class="text-center mt-3">
+        <button id="download-pdf" class="btn btn-primary">Download as PDF</button>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+<script src='./script.js'></script>
+
+</body>
+</html>

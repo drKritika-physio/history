@@ -275,7 +275,7 @@ document.querySelector('form').addEventListener('submit',function(e){
     let output = `
     <div class="card shadow-lg border-0">
         <div class="card-header bg-primary text-white text-center">
-            <h3 class="mb-0">📋 Submitted Form Data</h3>
+            <h3 class="mb-0">📋 Patient Medical History</h3>
         </div>
         <div class="card-body p-4">
             <div class="row">
@@ -412,27 +412,23 @@ document.querySelector('form').addEventListener('submit',function(e){
     document.getElementById('form-results').innerHTML = output;
 
     // pdf
-    async function downloadPDF() {
-        // Select the content to be downloaded
-        const element = document.querySelector(".card"); // Change selector if needed
-        const canvas = await html2canvas(element, { scale: 2 });
-
-        // Convert canvas to image
-        const imgData = canvas.toDataURL("image/png");
-
-        // Initialize jsPDF
-        const pdf = new jspdf.jsPDF("p", "mm", "a4");
-
-        // Calculate width and height for the PDF
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-        // Add image to PDF
-        pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-
-        // Save the PDF
-        pdf.save("Submitted_Form_Data.pdf");
+    function downloadPDF() {
+        const element = document.querySelector(".card");
+        html2canvas(element).then((canvas) => {
+            const imgData = canvas.toDataURL("image/png");
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF("p", "mm", "a4");
+    
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+    
+            pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+            pdf.save("Submitted_Form_Data.pdf");
+        });
     }
+    
+    // Attach the downloadPDF function to the button's click event
+    document.getElementById("download-btn").addEventListener("click", downloadPDF);
 
 
 })

@@ -407,6 +407,7 @@ document.querySelector('form').addEventListener('submit',function(e){
                 <li class="list-group-item"><strong>Physiotherapist Name/Signature:</strong> ${physioSignature}</li>
             </ul>
         </div>
+        
     </div>`;
     // display
     document.getElementById('form-results').innerHTML = output;

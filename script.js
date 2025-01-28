@@ -406,10 +406,11 @@ document.querySelector('form').addEventListener('submit',function(e){
                 <li class="list-group-item"><strong>Date:</strong> ${signatureDate}</li>
                 <li class="list-group-item"><strong>Physiotherapist Name/Signature:</strong> ${physioSignature}</li>
             </ul>
-        </div>
-        <div class="text-center mt-3">
+            <div class="text-center mt-3">
                 <button class="btn btn-primary mt-3" id="download-btn">Download as PDF</button>
+            </div>
         </div>
+        
     </div>`;
     // display
     document.getElementById('form-results').innerHTML = output;
